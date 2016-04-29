@@ -1,8 +1,9 @@
 #!/bin/sh
 
+# wget https://raw.githubusercontent.com/FREEWING-JP/RaspberryPi_Files/master/gpio_shutdown_daemon/install.sh
 # bash install.sh
 #  or
-# sudo chmod +x install.sh
+# chmod +x install.sh
 # ./install.sh
 echo ================
 echo http://www.neko.ne.jp/~freewing/raspberry_pi/raspberry_pi_3_gpio_switch_shutdown_daemon/
@@ -12,7 +13,12 @@ echo ================
 # sudo apt-get -y upgrade
 # sudo apt-get -y dist-upgrade
 
-# sudo apt-get -y install git-core
+if ! hash git 2>/dev/null; then
+  echo ================
+  echo install git
+  echo ================
+  sudo apt-get -y install git-core
+fi
 
 echo ================
 echo install libi2c-dev
